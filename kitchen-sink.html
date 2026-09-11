@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every element — Dana Okonkwo</title>
+<meta name="description" content="A reference page showing every HTML element this site can use.">
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Every element</h1>
+  <p>
+    A reference for me. Right click anywhere, View Page Source, and copy what
+    you need. None of this uses a single class. It is all plain HTML, styled by
+    the stylesheet.
+  </p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="entries/index.html">Log</a>
+    <a href="project.html">Project</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main>
+
+<h2>Headings</h2>
+<h3>Heading three</h3>
+<h4>Heading four</h4>
+<p>
+  Use them in order. Do not skip from h2 to h4 because you like the size
+  better. Headings are how a screen reader user navigates the page, and how
+  search engines work out what it is about. Change the size in CSS instead.
+</p>
+
+
+<h2>Text</h2>
+<p>
+  A regular paragraph. Inside one you can have <strong>important text</strong>,
+  <em>emphasized text</em>, a <a href="#">link</a>, some
+  <mark>highlighted text</mark>, an <abbr title="Ypsilanti Community Utilities
+  Authority">abbreviation</abbr> you can hover over, a bit of
+  <code>inline code</code>, <del>deleted text</del>, <ins>inserted text</ins>,
+  and <small>small print</small>.
+</p>
+
+<p>
+  <strong>strong</strong> and <em>em</em> carry meaning. <b>b</b> and <i>i</i>
+  only change appearance. Use the first two.
+</p>
+
+
+<h2>Dates</h2>
+<p>
+  Published <time datetime="2026-09-11">September 11, 2026</time>.
+  The datetime attribute is for machines, the text is for people.
+</p>
+
+
+<h2>Lists</h2>
+
+<h3>Unordered, when order does not matter</h3>
+<ul>
+  <li>One thing</li>
+  <li>Another thing
+    <ul>
+      <li>A nested thing</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Ordered, when it does</h3>
+<ol>
+  <li>First step</li>
+  <li>Second step</li>
+</ol>
+
+<h3>Terms and their definitions</h3>
+<dl>
+  <dt>Decision point</dt>
+  <dd>A place where a person has to choose and can choose wrong.</dd>
+
+  <dt>Signifier</dt>
+  <dd>Something that tells you an action is possible.</dd>
+</dl>
+
+
+<h2>Images</h2>
+
+<figure>
+  <img src="images/placeholder.png"
+       width="1200" height="800"
+       alt="A gray placeholder rectangle.">
+  <figcaption>
+    A figure is an image plus its caption, kept together as one unit. The alt
+    attribute is what gets read aloud if the image cannot be seen. Describe what
+    is in it, not that it is a photo.
+  </figcaption>
+</figure>
+
+<p>
+  Two images side by side, in one figure, with one caption:
+</p>
+
+<figure>
+  <img src="images/placeholder.png" width="600" height="400" alt="Before.">
+  <img src="images/placeholder-2.png" width="600" height="400" alt="After.">
+  <figcaption>Before and after.</figcaption>
+</figure>
+
+
+<h2>Tables</h2>
+
+<table>
+  <caption>Caption says what the table is counting</caption>
+  <thead>
+    <tr>
+      <th scope="col">Thing</th>
+      <th scope="col">Count</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">First row</th>
+      <td>12</td>
+      <td>scope tells a screen reader which header owns this cell</td>
+    </tr>
+    <tr>
+      <th scope="row">Second row</th>
+      <td>4</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2>Quotes</h2>
+
+<blockquote>
+  <p>A quotation from somebody. Keep the paragraph tag inside.</p>
+  <cite>Who said it</cite>
+</blockquote>
+
+
+<h2>Code and preformatted text</h2>
+
+<p>Inline: the <code>alt</code> attribute is required on every image.</p>
+
+<pre><code>&lt;figure&gt;
+  &lt;img src="photo.jpg" alt="What is in the photo."&gt;
+  &lt;figcaption&gt;Caption.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+<p>
+  <code>pre</code> keeps your spacing and line breaks exactly as typed. Good for
+  raw field notes.
+</p>
+
+
+<h2>Collapsed content</h2>
+
+<details>
+  <summary>Click to open</summary>
+  <p>
+    Hidden until someone asks for it. No JavaScript. Useful for long notes,
+    transcripts, or anything that would otherwise bury the page.
+  </p>
+</details>
+
+
+<h2>Asides</h2>
+
+<aside>
+  <p>Related but off to the side. Simple.css puts a box around it.</p>
+</aside>
+
+
+<h2>Form controls</h2>
+
+<p>
+  You will not need these until later in the semester, but every one of them is
+  something you will be redesigning.
+</p>
+
+<label for="name">Your name</label>
+<input type="text" id="name" name="name" placeholder="Type here">
+
+<label for="where">Where does this happen</label>
+<select id="where" name="where">
+  <option>Ypsilanti</option>
+  <option>Ann Arbor</option>
+  <option>Detroit</option>
+</select>
+
+<label for="notes">Notes</label>
+<textarea id="notes" name="notes" rows="3"></textarea>
+
+<p>
+  Every input needs a <code>&lt;label&gt;</code> whose <code>for</code> matches
+  the input's <code>id</code>. Without it, a screen reader announces an unlabeled
+  box, and clicking the label text does not focus the field. Placeholder text is
+  not a label.
+</p>
+
+<button>A button</button>
+
+
+<h2>Rules</h2>
+<p>A horizontal rule separates sections of content.</p>
+<hr>
+
+
+<h2>Contact</h2>
+<address>
+  Written by <a href="mailto:someone@umich.edu">Dana Okonkwo</a>.
+</address>
+
+</main>
+
+<footer>
+  <p>Dana Okonkwo. UT330, Taubman College, Fall 2026.</p>
+</footer>
+
+</body>
+</html>
